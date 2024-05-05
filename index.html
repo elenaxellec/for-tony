@@ -27,28 +27,25 @@
                 <p>If you say yes there will be a surprise!</p>
             </div>
             <!-- Dropdown list initially hidden -->
-            <form id="dropdown-form" action="https://youtu.be/L-LKAPjt3pY?si=igFye6Oeb56b1KIx" method="get"> <!-- Change your_destination_page.html to the actual page URL you want to redirect to -->
-                <select id="dropdown-list" name="selectedOption">
-                    <option value="option1">I love you</option>
-                    <option value="option2">Thank you for always making me laugh</option>
-                    <option value="option3">Thank you for taking care of me</option>
-                    <option value="option4">For always listening to me</option>
-                    <option value="option5">Giving me a shoulder to lean on no matter what happens</option>
-                    <option value="option6">Bringing me to places and good food</option>
-                    <option value="option7">Calls me "my love"</option>
-                    <option value="option8">Always share funny videos and things that you're interested in with me</option>
-                    <option value="option9">I promise to be by your side like how you do</option>
-                    <option value="option10">Try to make you laugh when you don't feel like it</option>
-                    <option value="option11">Take good care of you when you don't feel like taking care of yourself</option>
-                    <option value="option12">I'm bad at this but this is me attempting</option>
-                    <option value="option13">It's my first time making a webpage in 2 hours ):</option>
-                    <option value="option14">I love your cute laugh and your love handles</option>
-                    <option value="option15">I promise more nudes 4 u</option>
-                    <option value="option16">Lastly this is a coupon for a really nice massage session & many many forehead kisses</option>
-                    <option value="option17">I love you</option>
-                </select>
-                <button type="submit">Submit</button> <!-- Submit button -->
-            </form>
+            <select id="dropdown-list" style="display: none;">
+                <option value="option1">I love you</option>
+                <option value="option2">Thank you for always making me laugh</option>
+                <option value="option3">Thank you for taking care of me</option>
+                <option value="option4">For always listening to me</option>
+                <option value="option5">Giving me a shoulder to lean on no matter what happens</option>
+                <option value="option6">Bringing me to places and good food</option>
+                <option value="option7">Calls me "my love"</option>
+                <option value="option8">Always share funny videos and things that you're interested in with me</option>
+                <option value="option9">I promise to be by your side like how you do</option>
+                <option value="option10">Try to make you laugh when you don't feel like it</option>
+                <option value="option11">Take good care of you when you don't feel like taking care of yourself</option>
+                <option value="option12">I'm bad at this but this is me attempting</option>
+                <option value="option13">It's my first time making a webpage in 2 hours ):</option>
+                <option value="option14">I love your cute laugh and your love handles</option>
+                <option value="option15">I promise more nudes 4 u</option>
+                <option value="option16">Lastly this is a coupon for a really nice massage session & many many forehead kisses</option>
+                <option value="option17">I love you</option>
+            </select>
             <!-- Buttons for options -->
             <div id="options">
                 <button id="yes-button" onclick="selectOption('yes')">Yes :)</button> <!-- Yes button -->
