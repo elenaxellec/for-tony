@@ -103,6 +103,58 @@ function rainHearts(callback) {
     }, 2000); // Stop raining hearts after 2 seconds
 }
 
+// Function to create and animate stars
+function createStar() {
+    var star = document.createElement('div');
+    star.innerHTML = '★'; // Star emoji
+    star.style.position = 'absolute';
+    star.style.fontSize = '20px';
+    star.style.color = '#ffff00'; // Star color (yellow)
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    star.style.top = '-40px'; // Start from above the screen
+    document.body.appendChild(star);
+    
+    return star;
+}
+
+function animateStar(star) {
+    var animation = star.animate([
+        { top: '-40px' }, // Start position
+        { top: window.innerHeight + 'px' } // End position
+    ], {
+        duration: Math.random() * 3000 + 2000, // Random duration between 2 and 5 seconds
+        easing: 'ease-in', // Easing function
+        fill: 'forwards' // Maintain end state
+    });
+
+    animation.onfinish = function() {
+        star.remove(); // Remove the star after animation ends
+    };
+}
+
+// Function to rain stars
+function rainStars(callback) {
+    var interval = setInterval(function() {
+        var star = createStar();
+        animateStar(star);
+    }, 200); // Generate a star every 200 milliseconds
+
+    setTimeout(function() {
+        clearInterval(interval);
+        if (callback) {
+            callback();
+        }
+    }, 2000); // Stop raining stars after 2 seconds
+}
+
+// Start raining stars after the hearts
+rainHearts(function() {
+    console.log('Hearts stopped raining.');
+    rainStars(function() {
+        console.log('Stars stopped raining.');
+    });
+});
+
 // Start raining hearts
 rainHearts(function() {
     console.log('Hearts stopped raining.');
