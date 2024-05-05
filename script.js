@@ -132,7 +132,7 @@ function showRedirectButton() {
 function showSongButton() {
     // Create a refresh button element
    // Create the redirect button
-    var SongButton = document.createElement('buttons');
+    var songButton = document.createElement('buttons');
     // Set button text
     songButton.innerText = 'Song 4 u';
     // Set button class for styling
