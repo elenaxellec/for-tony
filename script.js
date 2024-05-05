@@ -2,19 +2,20 @@
 function selectOption(option) {
     // Check which option was clicked
     if (option === 'yes') {
+        // Hide the question
+        document.getElementById('question').style.display = 'none';
+        // Hide the captions
+        document.getElementById('captions').style.display = 'none';
+        // Show the drop-down list
+        document.getElementById('dropdown-list').style.display = 'block';
+        // Hide the options container
+        document.getElementById('options').style.display = 'none';
+        // Start raining hearts
         rainHearts(function() {
-            // Hide the question
-            document.getElementById('question').style.display = 'none';
-            // Hide the captions
-            document.getElementById('captions').style.display = 'none';
-            // Show the drop-down list
-            document.getElementById('dropdown-list').style.display = 'block';
-            // Hide the options container
-            document.getElementById('options').style.display = 'none';
-            // // Hide the "Yes" button
-            // document.getElementById('yes-button').style.display = 'none';
-            // // Hide the "No" button
-            // document.getElementById('no-button').style.display = 'none';
+            // Hide the "Yes" button
+            document.getElementById('yes-button').style.display = 'none';
+            // Hide the "No" button
+            document.getElementById('no-button').style.display = 'none';
             // Display the cat-heart.gif
             displayCatHeart();
         });
@@ -112,7 +113,7 @@ function displayCat() {
     catImage.onload = function() {
         imageContainer.appendChild(catImage);
         // Hide the options container
-        document.getElementById('options').style.display = 'none';
+        // document.getElementById('options').style.display = 'none';
         // // Hide the "Yes" button
         // document.getElementById('yes-button').style.display = 'none';
         // // Hide the "No" button
