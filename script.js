@@ -2,19 +2,17 @@
 
 // Function to handle button click events
 // Function to handle button click events
-// Function to handle button click events
 function selectOption(option) {
     // Check which option was clicked
     if (option === 'yes') {
-        // // Hide the captions
-        // document.getElementById('captions').style.display = 'none';
-        // // Show the drop-down list
-        // document.getElementById('dropdown-list').style.display = 'block';
-        // // Flash rainbow colors
-        rainHearts(function() {
-            document.getElementById('question').style.display = 'none'; // Hide the question
-            displayCatHeart(); // Display the cat-heart.gif
-        });
+        // Hide the captions
+        document.getElementById('captions').style.display = 'none';
+        // Show the drop-down list
+        document.getElementById('dropdown-list').style.display = 'block';
+        // Hide the question
+        document.getElementById('question').style.display = 'none';
+        // Display the cat-heart.gif
+        displayCatHeart();
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?'; 
@@ -95,6 +93,7 @@ function displayCat() {
 }
 
 // Function to display the cat-heart.gif
+// Function to display the cat-heart.gif
 function displayCatHeart() {
     // Clear existing content in the image container
     document.getElementById('image-container').innerHTML = '';
@@ -109,11 +108,6 @@ function displayCatHeart() {
     // When the cat-heart image is fully loaded, add it to the image container
     catHeartImage.onload = function() {
         imageContainer.appendChild(catHeartImage);
-        // document.getElementById('captions').style.display = 'none';
-        // // Show the dropdown list
-        // document.getElementById('dropdown-list').style.display = 'block';
-        // // Hide the options container
-        document.getElementById('options').style.display = 'none';
     };
 }
 
