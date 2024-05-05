@@ -12,9 +12,9 @@ function selectOption(option) {
             // Hide the options container
             document.getElementById('options').style.display = 'none';
             // Hide the "Yes" button
-            // document.getElementById('yes-button').style.display = 'none';
-            // // Hide the "No" button
-            // document.getElementById('no-button').style.display = 'none';
+            document.getElementById('yes-button').style.display = 'none';
+            // Hide the "No" button
+            document.getElementById('no-button').style.display = 'none';
             // Display the cat-heart.gif
             displayCatHeart();
         });
@@ -113,10 +113,10 @@ function displayCat() {
         imageContainer.appendChild(catImage);
         // Hide the options container
         document.getElementById('options').style.display = 'none';
-        // Hide the "Yes" button
-        document.getElementById('yes-button').style.display = 'none';
-        // Hide the "No" button
-        document.getElementById('no-button').style.display = 'none';
+        // // Hide the "Yes" button
+        // document.getElementById('yes-button').style.display = 'none';
+        // // Hide the "No" button
+        // document.getElementById('no-button').style.display = 'none';
     };
 }
 
