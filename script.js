@@ -10,18 +10,14 @@ function selectOption(option) {
         document.getElementById('question').style.display = 'none';
         // Hide the captions
         document.getElementById('captions').style.display = 'none';
-        // Show the drop-down list
-        // document.getElementById('dropdown-list').style.display = 'block';
         // Hide the options container
         document.getElementById('options').style.display = 'none';
         // Start raining hearts and stars
-        // Start raining hearts and stars
         startRaining();
-        // Show the drop-down list
-        document.getElementById('dropdown-list').style.display = 'block';
         // Display the cat-heart.gif
         displayCatHeart();
-
+        // Show the drop-down list after the cat-heart image is displayed
+        document.getElementById('dropdown-list').style.display = 'block';
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?'; 
@@ -55,6 +51,23 @@ function startRaining() {
 function stopRaining() {
     clearInterval(heartInterval);
     clearInterval(starInterval);
+}
+
+// Function to display the cat-heart.gif
+function displayCatHeart() {
+    // Get the container where the image will be displayed
+    var imageContainer = document.getElementById('image-container');
+    // Create a new Image element for the cat-heart
+    var catHeartImage = new Image();
+    // Set the source (file path) for the cat-heart image
+    catHeartImage.src = 'heart-ending.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
+    // Set alternative text for the image (for accessibility)
+    catHeartImage.alt = 'Cat Heart';
+    // When the cat-heart image is fully loaded, add it to the image container
+    catHeartImage.onload = function() {
+        imageContainer.innerHTML = ''; // Clear existing content
+        imageContainer.appendChild(catHeartImage);
+    };
 }
 
 // Function to create and animate hearts
