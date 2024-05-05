@@ -5,7 +5,7 @@ function selectOption(option) {
     // Check which option was clicked
     if (option === 'yes') {
         // Flash rainbow colors
-        flashRainbowColors(function() {
+        rainHearts(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
             displayCatHeart(); // Display the cat-heart.gif
         });
