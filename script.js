@@ -11,10 +11,10 @@ function selectOption(option) {
             document.getElementById('dropdown-list').style.display = 'block';
             // Hide the options container
             document.getElementById('options').style.display = 'none';
-            // Hide the "Yes" button
-            document.getElementById('yes-button').style.display = 'none';
-            // Hide the "No" button
-            document.getElementById('no-button').style.display = 'none';
+            // // Hide the "Yes" button
+            // document.getElementById('yes-button').style.display = 'none';
+            // // Hide the "No" button
+            // document.getElementById('no-button').style.display = 'none';
             // Display the cat-heart.gif
             displayCatHeart();
         });
