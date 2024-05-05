@@ -15,10 +15,12 @@ function selectOption(option) {
         // Hide the options container
         document.getElementById('options').style.display = 'none';
         // Start raining hearts and stars
+        // Start raining hearts and stars
         startRaining();
+        // Show the drop-down list
+        document.getElementById('dropdown-list').style.display = 'block';
+        // Display the cat-heart.gif
         displayCatHeart();
-            // Show the drop-down list after the cat-heart image is displayed
-                document.getElementById('dropdown-list').style.display = 'block';
 
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
