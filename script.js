@@ -18,6 +18,8 @@ function selectOption(option) {
         displayCatHeart();
         // Show refresh button
         showRefreshButton();
+        // Show redirect button
+        showRedirectButton();
         // Show the drop-down list after the cat-heart image is displayed
         document.getElementById('dropdown-list').style.display = 'block';
     } else if (option === 'no') {
@@ -100,7 +102,7 @@ function showRefreshButton() {
 function showRedirectButton() {
     // Create a refresh button element
    // Create the redirect button
-    var redirectButton = document.createElement('button');
+    var redirectButton = document.createElement('buttons');
     // Set button text
     redirectButton.innerText = 'Go to Website';
     // Set button class for styling
