@@ -153,21 +153,6 @@ function animateStar(star) {
     };
 }
 
-// Function to redirect based on selected option
-function redirectToPage(option) {
-    switch(option) {
-        case 'option1':
-            window.location.href = 'https://www.youtube.com/watch?v=L-LKAPjt3pY&list=PL_MXXYagFLDD95cofma3Lph1-KmjVE2D7&index=2';
-            break;
-        case 'option2':
-            window.location.href = 'page2.html';
-            break;
-        // Add more cases for other options as needed
-        default:
-            alert('Invalid option!');
-    }
-}
-
 // Function to display the cat.gif initially
 function displayCat() {
     // Get the container where the image will be displayed
