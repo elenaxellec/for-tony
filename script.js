@@ -10,9 +10,10 @@ function selectOption(option) {
         // Show the drop-down list
         document.getElementById('dropdown-list').style.display = 'block';
         // Hide the question
-        document.getElementById('question').style.display = 'none';
-        // Display the cat-heart.gif
-        displayCatHeart();
+        rainHearts(function() {
+            document.getElementById('question').style.display = 'none'; // Hide the question
+            displayCatHeart(); // Display the cat-heart.gif
+        });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?'; 
