@@ -16,6 +16,10 @@ function selectOption(option) {
         document.getElementById('options').style.display = 'none';
         // Start raining hearts and stars
         startRaining();
+        displayCatHeart();
+            // Show the drop-down list after the cat-heart image is displayed
+                document.getElementById('dropdown-list').style.display = 'block';
+
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?'; 
