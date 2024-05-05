@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will you forgive me?</title>
+    <title>Tony, will you forgive me?</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap">
     <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
 </head>
 <body>
+    <!-- Initial background music -->
+    <audio id="initial-music" src="paynomind.mp3" autoplay loop></audio>
+
     <div id="container">
         <div id="image-container"></div> <!-- Container for displaying images -->
         <div id="text-container">
-            <div id="question">Will you forgive me?</div> <!-- Question -->
+            <div id="question">Tony, will you forgive me?</div> <!-- Question -->
             <div id="options">
                 <button id="yes-button" onclick="selectOption('yes')">Yes :)</button> <!-- Yes button -->
                 <button id="no-button" onclick="selectOption('no')">No ):</button> <!-- No button -->
