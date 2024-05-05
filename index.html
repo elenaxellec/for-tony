@@ -1,163 +1,74 @@
-// Define variables to keep track of rain intervals
-var heartInterval = null;
-var starInterval = null;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear Tony, ...</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap">
+    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
+</head>
+<body>
+<!--     Initial background music -->
+<!--     <audio id="initial-music" src="" autoplay loop></audio> -->
+    <!-- Background music widget -->
+    <audio id="background-music" src="https://github.com/elenaxellec/for-tony/blob/main/paynomind.mp3?raw=true" loop></audio>
+<!--     <button id="music-control" onclick="toggleBackgroundMusic()">Play Music</button> -->
 
-// Function to handle button click events
-function selectOption(option) {
-    // Check which option was clicked
-    if (option === 'yes') {
-        // Hide the question
-        document.getElementById('question').style.display = 'none';
-        // Hide the captions
-        document.getElementById('captions').style.display = 'none';
-        // Hide the options container
-        document.getElementById('options').style.display = 'none';
-        // Start raining hearts and stars
-        startRaining();
-        // Display the cat-heart.gif
-        displayCatHeart();
-        // Show the drop-down list after the cat-heart image is displayed
-        document.getElementById('dropdown-list').style.display = 'block';
-    } else if (option === 'no') {
-        // Change text on the "No" button to "You sure?"
-        document.getElementById('no-button').innerText = 'You sure?'; 
-        // Increase font size of "Yes" button
-        var yesButton = document.getElementById('yes-button');
-        var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
-        yesButton.style.fontSize = newSize + 'px';
-    } else {
-        // If neither "Yes" nor "No" was clicked, show an alert message
-        alert('Invalid option!');
-    }
-}
 
-// Function to start raining hearts and stars
-function startRaining() {
-    // Start raining hearts
-    heartInterval = setInterval(function() {
-        var heart = createHeart();
-        animateHeart(heart);
-    }, 200); // Generate a heart every 200 milliseconds
+    <div id="container">
+        <div id="image-container"></div> <!-- Container for displaying images -->
+        <div id="text-container">
+            <div id="question">Tony, will you please forgive me?</div> <!-- Question -->
+            <div id="captions">
+                <!-- Add your captions here -->
+                <p>I'm sorry for getting worked up over such a tiny matter. I didn't mean to ruin your day. You mean the world to me, and seeing you upset breaks me. </p>
+                <p>I just want you to know that I love you & I'm sorry for the times I was so inconsiderate...</p>
+                <p>I promise to grow and do better.</p>
+                <p>If you say yes there will be a surprise!</p>
+            </div>
+            <!-- Dropdown list initially hidden -->
+            <select id="dropdown-list" style="display: none;">
+                <option value="option1">I love you</option>
+                <option value="option2">Thank you for always making me laugh</option>
+                <option value="option3">Thank you for taking care of me</option>
+                <option value="option4">For always listening to me</option>
+                <option value="option5">Giving me a shoulder to lean on no matter what happens</option>
+                <option value="option6">Bringing me to places and good food</option>
+                <option value="option7">Calls me "my love"</option>
+                <option value="option8">Always share funny videos and things that you're interested in with me</option>
+                <option value="option9">I promise to be by your side like how you do</option>
+                <option value="option10">Try to make you laugh when you don't feel like it</option>
+                <option value="option11">Take good care of you when you don't feel like taking care of yourself</option>
+                <option value="option12">I'm bad at this but this is me attempting</option>
+                <option value="option13">It's my first time making a webpage in 2 hours ):</option>
+                <option value="option14">I love your cute laugh and your love handles</option>
+                <option value="option15">I promise more nudes 4 u</option>
+                <option value="option16">Lastly this is a coupon for a really nice massage session & many many forehead kisses</option>
+                <option value="option17">I love you</option>
+            </select>
+            <!-- Buttons for options -->
+            <div id="options">
+                <button id="yes-button" onclick="selectOption('yes')">Yes :)</button> <!-- Yes button -->
+                <button id="no-button" onclick="selectOption('no')">No ):</button> <!-- No button -->
+            </div>
+        </div>
+    </div>
 
-    // Start raining stars
-    starInterval = setInterval(function() {
-        var star = createStar();
-        animateStar(star);
-    }, 200); // Generate a star every 200 milliseconds
-}
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+<!--     <script>
+        // Function to toggle background music
+        function toggleBackgroundMusic() {
+            var audio = document.getElementById('background-music');
+            var button = document.getElementById('music-control');
 
-// Function to stop raining hearts and stars
-function stopRaining() {
-    clearInterval(heartInterval);
-    clearInterval(starInterval);
-}
-
-// Function to display the cat-heart.gif
-function displayCatHeart() {
-    // Get the container where the image will be displayed
-    var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the cat-heart
-    var catHeartImage = new Image();
-    // Set the source (file path) for the cat-heart image
-    catHeartImage.src = 'heart-ending.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
-    // Set alternative text for the image (for accessibility)
-    catHeartImage.alt = 'Cat Heart';
-    // When the cat-heart image is fully loaded, add it to the image container
-    catHeartImage.onload = function() {
-        imageContainer.innerHTML = ''; // Clear existing content
-        imageContainer.appendChild(catHeartImage);
-    };
-}
-
-// Function to create and animate hearts
-function createHeart() {
-    var heart = document.createElement('div');
-    heart.innerHTML = '❤️'; // Heart emoji
-    heart.style.position = 'absolute';
-    heart.style.fontSize = '20px';
-    heart.style.color = '#ff0000'; // Heart color
-    heart.style.left = Math.random() * window.innerWidth + 'px';
-    heart.style.top = '-40px'; // Start from above the screen
-    document.body.appendChild(heart);
-    
-    return heart;
-}
-
-function animateHeart(heart) {
-    var animation = heart.animate([
-        { top: '-40px' }, // Start position
-        { top: window.innerHeight + 'px' } // End position
-    ], {
-        duration: Math.random() * 3000 + 2000, // Random duration between 2 and 5 seconds
-        easing: 'ease-in', // Easing function
-        fill: 'forwards' // Maintain end state
-    });
-
-    animation.onfinish = function() {
-        heart.remove(); // Remove the heart after animation ends
-    };
-}
-
-// Function to create and animate stars
-function createStar() {
-    var star = document.createElement('div');
-    star.innerHTML = '★'; // Star emoji
-    star.style.position = 'absolute';
-    star.style.fontSize = '20px';
-    star.style.color = '#ffff00'; // Star color (yellow)
-    star.style.left = Math.random() * window.innerWidth + 'px';
-    star.style.top = '-40px'; // Start from above the screen
-    document.body.appendChild(star);
-    
-    return star;
-}
-
-function animateStar(star) {
-    var animation = star.animate([
-        { top: '-40px' }, // Start position
-        { top: window.innerHeight + 'px' } // End position
-    ], {
-        duration: Math.random() * 3000 + 2000, // Random duration between 2 and 5 seconds
-        easing: 'ease-in', // Easing function
-        fill: 'forwards' // Maintain end state
-    });
-
-    animation.onfinish = function() {
-        star.remove(); // Remove the star after animation ends
-    };
-}
-
-// Function to redirect based on selected option
-function redirectToPage(option) {
-    switch(option) {
-        case 'option1':
-            window.location.href = 'https://www.youtube.com/watch?v=L-LKAPjt3pY&list=PL_MXXYagFLDD95cofma3Lph1-KmjVE2D7&index=2';
-            break;
-        case 'option2':
-            window.location.href = 'page2.html';
-            break;
-        // Add more cases for other options as needed
-        default:
-            alert('Invalid option!');
-    }
-}
-
-// Function to display the cat.gif initially
-function displayCat() {
-    // Get the container where the image will be displayed
-    var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the cat
-    var catImage = new Image();
-    // Set the source (file path) for the cat
-    catImage.src = 'cute-sad.gif'; // Assuming the cat image is named "cat.gif"
-    // Set alternative text for the image (for accessibility)
-    catImage.alt = 'Cat';
-    // When the cat image is fully loaded, add it to the image container
-    catImage.onload = function() {
-        imageContainer.appendChild(catImage);
-    };
-}
-
-// Display the cat.gif initially
-displayCat();
+            if (audio.paused) {
+                audio.play();
+                button.innerText = 'Pause Music';
+            } else {
+                audio.pause();
+                button.innerText = 'Play Music';
+            }
+        }
+    </script> -->
+</body>
+</html>
