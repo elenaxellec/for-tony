@@ -9,7 +9,10 @@
 </head>
 <body>
     <!-- Initial background music -->
-    <audio id="initial-music" src="https://raw.githubusercontent.com/elenaxellec/for-tony/main/path/to/paynomind.mp3" autoplay loop></audio>
+<!--     <audio id="initial-music" src="" autoplay loop></audio> -->
+    <!-- Background music widget -->
+    <audio id="background-music" src="https://raw.githubusercontent.com/elenaxellec/for-tony/main/path/to/paynomind.mp3" loop></audio>
+    <button id="music-control" onclick="toggleBackgroundMusic()">Play Music</button>
 
 
     <div id="container">
@@ -52,5 +55,20 @@
     </div>
 
     <script src="script.js"></script> <!-- Link to external JavaScript file -->
+    <script>
+        // Function to toggle background music
+        function toggleBackgroundMusic() {
+            var audio = document.getElementById('background-music');
+            var button = document.getElementById('music-control');
+
+            if (audio.paused) {
+                audio.play();
+                button.innerText = 'Pause Music';
+            } else {
+                audio.pause();
+                button.innerText = 'Play Music';
+            }
+        }
+    </script>
 </body>
 </html>
