@@ -31,13 +31,13 @@ body {
     margin-top: 20px; /* Add space above the options */
 }
 
- #dropdown-list {
+#dropdown-list {
     display: none;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
- }
+    left: 50%; /* Position the drop-down list horizontally in the middle */
+    bottom: 10px; /* Position the drop-down list 10px from the bottom */
+    transform: translateX(-50%); /* Center the drop-down list horizontally */
+}
 
 button {
     padding: 10px 20px; /* Set padding for buttons */
