@@ -20,6 +20,8 @@ function selectOption(option) {
         showRefreshButton();
         // Show redirect button
         showRedirectButton();
+        // Show song button
+        showSongButton();
         // Show the drop-down list after the cat-heart image is displayed
         document.getElementById('dropdown-list').style.display = 'block';
     } else if (option === 'no') {
@@ -109,7 +111,7 @@ function showRedirectButton() {
     redirectButton.className = 'redirect-button';
     // Set button click event
     redirectButton.onclick = function() {
-        window.open = ('https://www.youtube.com/watch?v=G8HPhrVMZoA&list=LL&index=30', '_blank'); // Replace 'https://example.com' with the desired website URL
+        window.open('https://www.youtube.com/watch?v=G8HPhrVMZoA&list=LL&index=30', '_blank'); // Replace 'https://example.com' with the desired website URL
     };
     // Position the refresh button in the corner
     redirectButton.style.position = 'fixed';
@@ -124,6 +126,34 @@ function showRedirectButton() {
     redirectButton.style.cursor = 'pointer';
     // Append the refresh button to the body
     document.body.appendChild(redirectButton);
+}
+
+// Function to display the redirect button
+function showSongButton() {
+    // Create a refresh button element
+   // Create the redirect button
+    var SongButton = document.createElement('buttons');
+    // Set button text
+    songButton.innerText = 'Song 4 u';
+    // Set button class for styling
+    songButton.className = 'redirect-button';
+    // Set button click event
+    songButton.onclick = function() {
+        window.open('https://www.youtube.com/watch?v=8iQkvnvt8oY', '_blank'); // Replace 'https://example.com' with the desired website URL
+    };
+    // Position the refresh button in the corner
+    songButton.style.position = 'fixed';
+    songButton.style.top = '20px';
+    songButton.style.right = '20px';
+    songButton.style.padding = '5px 10px'; // Adjust padding to make it smaller
+    songButton.style.fontSize = '14px'; // Adjust font size to make it smaller
+    songButton.style.border = '2px solid #333';
+    songButton.style.backgroundColor = '#fff';
+    songButton.style.color = '#333';
+    songButton.style.borderRadius = '5px';
+    songButton.style.cursor = 'pointer';
+    // Append the refresh button to the body
+    document.body.appendChild(songButton);
 }
 
 // Function to create and animate hearts
