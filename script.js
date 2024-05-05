@@ -75,7 +75,7 @@ function displayCatHeart() {
 // Function to display the refresh button
 function showRefreshButton() {
     // Create a refresh button element
-    var refreshButton = document.createElement('button');
+    var refreshButton = document.createElement('buttons');
     refreshButton.innerText = 'Refresh';
     refreshButton.id = 'refresh-button';
     refreshButton.onclick = function() {
