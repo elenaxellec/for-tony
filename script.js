@@ -69,8 +69,14 @@ function displayCatHeart() {
     catHeartImage.src = 'heart-ending.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
     // Set alternative text for the image (for accessibility)
     catHeartImage.alt = 'Cat Heart';
+     // Initially set opacity to 0 for smooth fade-in transition
+    catHeartImage.style.opacity = 0;
     // When the cat-heart image is fully loaded, add it to the image container
     catHeartImage.onload = function() {
+        // Apply smooth transition to opacity property
+        catHeartImage.style.transition = 'opacity 0.5s ease-in-out';
+        // Set opacity to 1 to fade in smoothly
+        catHeartImage.style.opacity = 1;
         imageContainer.innerHTML = ''; // Clear existing content
         imageContainer.appendChild(catHeartImage);
     };
