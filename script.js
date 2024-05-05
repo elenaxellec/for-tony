@@ -9,6 +9,8 @@ function selectOption(option) {
             document.getElementById('captions').style.display = 'none';
             // Show the drop-down list
             document.getElementById('dropdown-list').style.display = 'block';
+            // Hide the options container
+            document.getElementById('options').style.display = 'none';
             // Display the cat-heart.gif
             displayCatHeart();
         });
