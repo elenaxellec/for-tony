@@ -100,7 +100,7 @@ function showRefreshButton() {
 function showRedirectButton() {
     // Create a refresh button element
    // Create the redirect button
-    var redirectButton = document.createElement('buttons1');
+    var redirectButton = document.createElement('button');
     // Set button text
     redirectButton.innerText = 'Go to Website';
     // Set button class for styling
