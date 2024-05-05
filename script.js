@@ -1,3 +1,7 @@
+// Define variables to keep track of rain intervals
+var heartInterval = null;
+var starInterval = null;
+
 // Function to handle button click events
 function selectOption(option) {
     // Check which option was clicked
@@ -10,17 +14,8 @@ function selectOption(option) {
         // document.getElementById('dropdown-list').style.display = 'block';
         // Hide the options container
         document.getElementById('options').style.display = 'none';
-        // Start raining hearts
-        rainHearts(function() {
-            // Hide the "Yes" button
-            document.getElementById('yes-button').style.display = 'none';
-            // Hide the "No" button
-            document.getElementById('no-button').style.display = 'none';
-            // Display the cat-heart.gif
-            displayCatHeart();
-            // Show the drop-down list after the cat-heart image is displayed
-                document.getElementById('dropdown-list').style.display = 'block';
-        });
+        // Start raining hearts and stars
+        startRaining();
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?'; 
@@ -35,28 +30,25 @@ function selectOption(option) {
     }
 }
 
+// Function to start raining hearts and stars
+function startRaining() {
+    // Start raining hearts
+    heartInterval = setInterval(function() {
+        var heart = createHeart();
+        animateHeart(heart);
+    }, 200); // Generate a heart every 200 milliseconds
 
-// Function to redirect to the Spotify playlist page with playlist ID
-function redirectToPlaylistPage(playlistId) {
-    var playlistUrl = "https://open.spotify.com/embed/playlist/" + playlistId;
-    window.location.href = playlistUrl;
+    // Start raining stars
+    starInterval = setInterval(function() {
+        var star = createStar();
+        animateStar(star);
+    }, 200); // Generate a star every 200 milliseconds
 }
 
-// Function to display the cat-heart.gif
-function displayCatHeart() {
-    // Get the container where the image will be displayed
-    var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the cat-heart
-    var catHeartImage = new Image();
-    // Set the source (file path) for the cat-heart image
-    catHeartImage.src = 'heart-ending.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
-    // Set alternative text for the image (for accessibility)
-    catHeartImage.alt = 'Cat Heart';
-    // When the cat-heart image is fully loaded, add it to the image container
-    catHeartImage.onload = function() {
-        imageContainer.innerHTML = ''; // Clear existing content
-        imageContainer.appendChild(catHeartImage);
-    };
+// Function to stop raining hearts and stars
+function stopRaining() {
+    clearInterval(heartInterval);
+    clearInterval(starInterval);
 }
 
 // Function to create and animate hearts
@@ -88,21 +80,6 @@ function animateHeart(heart) {
     };
 }
 
-// Function to rain hearts
-function rainHearts(callback) {
-    var interval = setInterval(function() {
-        var heart = createHeart();
-        animateHeart(heart);
-    }, 200); // Generate a heart every 200 milliseconds
-
-    setTimeout(function() {
-        clearInterval(interval);
-        if (callback) {
-            callback();
-        }
-    }, 2000); // Stop raining hearts after 2 seconds
-}
-
 // Function to create and animate stars
 function createStar() {
     var star = document.createElement('div');
@@ -132,34 +109,6 @@ function animateStar(star) {
     };
 }
 
-// Function to rain stars
-function rainStars(callback) {
-    var interval = setInterval(function() {
-        var star = createStar();
-        animateStar(star);
-    }, 200); // Generate a star every 200 milliseconds
-
-    setTimeout(function() {
-        clearInterval(interval);
-        if (callback) {
-            callback();
-        }
-    }, 2000); // Stop raining stars after 2 seconds
-}
-
-// Start raining stars after the hearts
-rainHearts(function() {
-    console.log('Hearts stopped raining.');
-    rainStars(function() {
-        console.log('Stars stopped raining.');
-    });
-});
-
-// Start raining hearts
-rainHearts(function() {
-    console.log('Hearts stopped raining.');
-});
-
 // Function to redirect based on selected option
 function redirectToPage(option) {
     switch(option) {
@@ -188,15 +137,6 @@ function displayCat() {
     // When the cat image is fully loaded, add it to the image container
     catImage.onload = function() {
         imageContainer.appendChild(catImage);
-        // Hide the options container
-        // document.getElementById('options').style.display = 'none';
-        // // Hide the "Yes" button
-        // document.getElementById('yes-button').style.display = 'none';
-        // // Hide the "No" button
-        // document.getElementById('no-button').style.display = 'none';
-        if (callback) {
-            callback();
-        }
     };
 }
 
