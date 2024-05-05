@@ -1,10 +1,11 @@
 /* style.css */
 
 body {
-    font-family: Arial, sans-serif; /* Fallback font family */
+    font-family: 'Times New Roman', Times, serif; /* Set font family to Times New Roman */
+    font-style: italic; /* Make the font italic */
     text-align: center; /* Center-align text */
     margin: 0; /* Remove default margin */
-    background-color: #FADADD; /* Set background color to light pink */
+    background-color: #DDD5F3; /* Set background color to light purple */
 }
 
 #container {
@@ -20,7 +21,8 @@ body {
 }
 
 #question {
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
+    font-family: 'Times New Roman', Times, serif; /* Apply Times New Roman font to the question */
+    font-style: italic; /* Make the font italic */
     font-size: 52px; /* Set font size for the question */
 }
 
@@ -32,7 +34,8 @@ button {
     padding: 10px 20px; /* Set padding for buttons */
     margin: 0 10px; /* Set margin around buttons */
     font-size: 26px; /* Set font size for buttons */
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
+    font-family: 'Times New Roman', Times, serif; /* Apply Times New Roman font to the options */
+    font-style: italic; /* Make the font italic */
     background-color: #FB607F; /* Set button background color */
     color: white; /* Set text color to white */
     border: none; /* Remove button border */
