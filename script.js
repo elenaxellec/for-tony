@@ -111,7 +111,7 @@ function showRedirectButton() {
     redirectButton.className = 'redirect-button';
     // Set button click event
     redirectButton.onclick = function() {
-        window.open('https://www.youtube.com/watch?v=G8HPhrVMZoA&list=LL&index=30', '_blank'); // Replace 'https://example.com' with the desired website URL
+        window.open('https://www.youtube.com/watch?v=G8HPhrVMZoA', '_blank'); // Replace 'https://example.com' with the desired website URL
     };
     // Position the refresh button in the corner
     redirectButton.style.position = 'fixed';
