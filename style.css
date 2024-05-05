@@ -6,6 +6,7 @@ body {
     text-align: center; /* Center-align text */
     margin: 0; /* Remove default margin */
     background-color: #DDD5F3; /* Set background color to light purple */
+    overflow: hidden;
 }
 
 #container {
@@ -30,6 +31,14 @@ body {
     margin-top: 20px; /* Add space above the options */
 }
 
+ #dropdown-list {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+ }
+
 button {
     padding: 10px 20px; /* Set padding for buttons */
     margin: 0 10px; /* Set margin around buttons */
@@ -42,10 +51,4 @@ button {
     cursor: pointer; /* Set cursor to pointer on hover */
 }
 
- dropdown-list {
-    display: none;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
- }
+
