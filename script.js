@@ -85,6 +85,12 @@ function showRefreshButton() {
     refreshButton.style.position = 'fixed';
     refreshButton.style.bottom = '20px';
     refreshButton.style.right = '20px';
+    refreshButton.style.padding = '10px 20px';
+    refreshButton.style.border = '2px solid #333';
+    refreshButton.style.backgroundColor = '#fff';
+    refreshButton.style.color = '#333';
+    refreshButton.style.borderRadius = '5px';
+    refreshButton.style.cursor = 'pointer';
     // Append the refresh button to the body
     document.body.appendChild(refreshButton);
 }
