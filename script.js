@@ -16,6 +16,8 @@ function selectOption(option) {
         startRaining();
         // Display the cat-heart.gif
         displayCatHeart();
+        // Show refresh button
+        showRefreshButton();
         // Show the drop-down list after the cat-heart image is displayed
         document.getElementById('dropdown-list').style.display = 'block';
     } else if (option === 'no') {
@@ -68,6 +70,23 @@ function displayCatHeart() {
         imageContainer.innerHTML = ''; // Clear existing content
         imageContainer.appendChild(catHeartImage);
     };
+}
+
+// Function to display the refresh button
+function showRefreshButton() {
+    // Create a refresh button element
+    var refreshButton = document.createElement('button');
+    refreshButton.innerText = 'Refresh';
+    refreshButton.id = 'refresh-button';
+    refreshButton.onclick = function() {
+        window.location.reload(); // Reload the page when clicked
+    };
+    // Position the refresh button in the corner
+    refreshButton.style.position = 'fixed';
+    refreshButton.style.bottom = '20px';
+    refreshButton.style.right = '20px';
+    // Append the refresh button to the body
+    document.body.appendChild(refreshButton);
 }
 
 // Function to create and animate hearts
