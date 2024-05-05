@@ -5,13 +5,13 @@
 function selectOption(option) {
     // Check which option was clicked
     if (option === 'yes') {
-        // Hide the captions
-        document.getElementById('captions').style.display = 'none';
-        // Show the drop-down list
-        document.getElementById('dropdown-list').style.display = 'block';
-        // Hide the question
         rainHearts(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
+            // Hide the captions
+            // document.getElementById('captions').style.display = 'none';
+            // Show the drop-down list
+            document.getElementById('dropdown-list').style.display = 'block';
+            // Hide the question
             displayCatHeart(); // Display the cat-heart.gif
         });
     } else if (option === 'no') {
