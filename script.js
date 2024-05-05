@@ -96,6 +96,34 @@ function showRefreshButton() {
     document.body.appendChild(refreshButton);
 }
 
+// Function to display the refresh button
+function showRedirectButton() {
+    // Create a refresh button element
+   // Create the redirect button
+    var redirectButton = document.createElement('buttons');
+    // Set button text
+    redirectButton.innerText = 'Go to Website';
+    // Set button class for styling
+    redirectButton.className = 'redirect-button';
+    // Set button click event
+    redirectButton.onclick = function() {
+        window.location.href = 'https://www.youtube.com/watch?v=G8HPhrVMZoA&list=LL&index=30'; // Replace 'https://example.com' with the desired website URL
+    };
+    // Position the refresh button in the corner
+    redirectButton.style.position = 'fixed';
+    redirectButton.style.top = '20px';
+    redirectButton.style.left = '20px';
+    redirectButton.style.padding = '5px 10px'; // Adjust padding to make it smaller
+    redirectButton.style.fontSize = '14px'; // Adjust font size to make it smaller
+    redirectButton.style.border = '2px solid #333';
+    redirectButton.style.backgroundColor = '#fff';
+    redirectButton.style.color = '#333';
+    redirectButton.style.borderRadius = '5px';
+    redirectButton.style.cursor = 'pointer';
+    // Append the refresh button to the body
+    document.body.appendChild(redirectButton);
+}
+
 // Function to create and animate hearts
 function createHeart() {
     var heart = document.createElement('div');
