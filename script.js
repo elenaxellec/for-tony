@@ -8,7 +8,7 @@ function selectOption(option) {
         rainHearts(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
             // Hide the captions
-            // document.getElementById('captions').style.display = 'none';
+            document.getElementById('captions').style.display = 'none';
             // Show the drop-down list
             document.getElementById('dropdown-list').style.display = 'block';
             // Hide the question
@@ -110,7 +110,7 @@ function displayCatHeart() {
     catHeartImage.onload = function() {
         imageContainer.appendChild(catHeartImage);
         // Show the dropdown list
-        document.getElementById('dropdown-list').style.display = 'block';
+        // document.getElementById('dropdown-list').style.display = 'block';
         // Hide the options container
         document.getElementById('options').style.display = 'none';
     };
