@@ -95,8 +95,6 @@ function showRefreshButton() {
     refreshButton.onclick = function() {
         window.location.reload(); // Reload the page when clicked
     };
-    // Initially set opacity to 0 for smooth fade-in transition
-    refreshButton.style.opacity = 0;
     // Position the refresh button in the corner
     refreshButton.style.position = 'fixed';
     refreshButton.style.bottom = '20px';
@@ -124,8 +122,6 @@ function showRedirectButton() {
     redirectButton.onclick = function() {
         window.open('https://www.youtube.com/watch?v=G8HPhrVMZoA', '_blank'); // Replace 'https://example.com' with the desired website URL
     };
-    // Initially set opacity to 0 for smooth fade-in transition
-    redirectButton.style.opacity = 0;
     // Position the redirect button in the corner
     redirectButton.style.position = 'fixed';
     redirectButton.style.top = '20px';
@@ -153,8 +149,6 @@ function showSongButton() {
     songButton.onclick = function() {
         window.open('https://www.youtube.com/watch?v=8iQkvnvt8oY', '_blank'); // Replace 'https://example.com' with the desired website URL
     };
-    // Initially set opacity to 0 for smooth fade-in transition
-    songButton.style.opacity = 0;
     // Position the song button in the corner
     songButton.style.position = 'fixed';
     songButton.style.top = '20px';
