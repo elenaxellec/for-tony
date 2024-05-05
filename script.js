@@ -10,7 +10,7 @@ function selectOption(option) {
             // Hide the captions
             document.getElementById('captions').style.display = 'none';
             // Show the drop-down list
-            document.getElementById('dropdown-list').style.display = 'block';
+            document.getElementById('dropdown-list').style.display = 'none';
             // Hide the question
             displayCatHeart(); // Display the cat-heart.gif
         });
