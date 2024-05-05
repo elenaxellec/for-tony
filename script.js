@@ -86,22 +86,6 @@ function displayCatHeart() {
     };
 }
 
-// Show the drop-down list with smooth transition and delay
-function showDropdownList() {
-    var dropdownList = document.getElementById('dropdown-list');
-    // Initially set opacity to 0 for smooth fade-in transition
-    dropdownList.style.opacity = 0;
-    // Set display to block to ensure it's visible
-    dropdownList.style.display = 'block';
-    // Delay the fade-in effect for 1 second (1000 milliseconds)
-    setTimeout(function() {
-        // Apply smooth transition to opacity property
-        dropdownList.style.transition = 'opacity 1s ease-in-out';
-        // Set opacity to 1 to fade in smoothly
-        dropdownList.style.opacity = 1;
-    }, 1000); // 1000 milliseconds delay
-}
-
 // Function to display the refresh button with smooth transition and delay
 function showRefreshButton() {
     // Create a refresh button element
@@ -124,16 +108,6 @@ function showRefreshButton() {
     refreshButton.style.color = '#333';
     refreshButton.style.borderRadius = '5px';
     refreshButton.style.cursor = 'pointer';
-    // When the refresh button is added to the body, fade it in
-    refreshButton.onload = function() {
-        // Delay the fade-in effect for 1 second (1000 milliseconds)
-        setTimeout(function() {
-            // Apply smooth transition to opacity property
-            refreshButton.style.transition = 'opacity 1s ease-in-out';
-            // Set opacity to 1 to fade in smoothly
-            refreshButton.style.opacity = 1;
-        }, 1000); // 1000 milliseconds delay
-    };
     // Append the refresh button to the body
     document.body.appendChild(refreshButton);
 }
@@ -163,16 +137,6 @@ function showRedirectButton() {
     redirectButton.style.color = '#333';
     redirectButton.style.borderRadius = '5px';
     redirectButton.style.cursor = 'pointer';
-    // When the redirect button is added to the body, fade it in
-    redirectButton.onload = function() {
-        // Delay the fade-in effect for 1 second (1000 milliseconds)
-        setTimeout(function() {
-            // Apply smooth transition to opacity property
-            redirectButton.style.transition = 'opacity 1s ease-in-out';
-            // Set opacity to 1 to fade in smoothly
-            redirectButton.style.opacity = 1;
-        }, 1000); // 1000 milliseconds delay
-    };
     // Append the redirect button to the body
     document.body.appendChild(redirectButton);
 }
@@ -202,16 +166,6 @@ function showSongButton() {
     songButton.style.color = '#333';
     songButton.style.borderRadius = '5px';
     songButton.style.cursor = 'pointer';
-    // When the song button is added to the body, fade it in
-    songButton.onload = function() {
-        // Delay the fade-in effect for 1 second (1000 milliseconds)
-        setTimeout(function() {
-            // Apply smooth transition to opacity property
-            songButton.style.transition = 'opacity 1s ease-in-out';
-            // Set opacity to 1 to fade in smoothly
-            songButton.style.opacity = 1;
-        }, 1000); // 1000 milliseconds delay
-    };
     // Append the song button to the body
     document.body.appendChild(songButton);
 }
