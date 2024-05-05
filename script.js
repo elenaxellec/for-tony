@@ -35,6 +35,32 @@ function selectOption(option) {
     }
 }
 
+// Function to handle option selection
+function selectOption() {
+    var dropdown = document.getElementById("dropdown-list");
+    var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+
+    // Redirect to the Spotify playlist page based on the selected option
+    switch (selectedOption) {
+        case "option1":
+            redirectToPlaylistPage("30vRtM6bCQ6wuSy0sPRDbw");
+            break;
+        case "option2":
+            redirectToPlaylistPage("30vRtM6bCQ6wuSy0sPRDbw"); // Replace playlist ID with the actual one
+            break;
+        // Add cases for other options as needed
+        default:
+            // Default case if no specific action is needed
+            break;
+    }
+}
+
+// Function to redirect to the Spotify playlist page with playlist ID
+function redirectToPlaylistPage(playlistId) {
+    var playlistUrl = "https://open.spotify.com/embed/playlist/" + playlistId;
+    window.location.href = playlistUrl;
+}
+
 // Function to display the cat-heart.gif
 function displayCatHeart() {
     // Get the container where the image will be displayed
