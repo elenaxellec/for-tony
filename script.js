@@ -7,7 +7,7 @@ function selectOption(option) {
         // Hide the captions
         document.getElementById('captions').style.display = 'none';
         // Show the drop-down list
-        document.getElementById('dropdown-list').style.display = 'block';
+        // document.getElementById('dropdown-list').style.display = 'block';
         // Hide the options container
         document.getElementById('options').style.display = 'none';
         // Start raining hearts
@@ -18,6 +18,8 @@ function selectOption(option) {
             document.getElementById('no-button').style.display = 'none';
             // Display the cat-heart.gif
             displayCatHeart();
+            // Show the drop-down list after the cat-heart image is displayed
+                document.getElementById('dropdown-list').style.display = 'block';
         });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
@@ -118,6 +120,9 @@ function displayCat() {
         // document.getElementById('yes-button').style.display = 'none';
         // // Hide the "No" button
         // document.getElementById('no-button').style.display = 'none';
+        if (callback) {
+            callback();
+        }
     };
 }
 
