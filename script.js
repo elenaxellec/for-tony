@@ -2,9 +2,14 @@
 
 // Function to handle button click events
 // Function to handle button click events
+// Function to handle button click events
 function selectOption(option) {
     // Check which option was clicked
     if (option === 'yes') {
+        // Hide the captions
+        document.getElementById('captions').style.display = 'none';
+        // Show the drop-down list
+        document.getElementById('dropdown-list').style.display = 'block';
         // Flash rainbow colors
         rainHearts(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
@@ -23,6 +28,7 @@ function selectOption(option) {
         alert('Invalid option!');
     }
 }
+
 
 function createHeart() {
     var heart = document.createElement('div');
