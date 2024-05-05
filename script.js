@@ -136,7 +136,7 @@ function showSongButton() {
     // Set button text
     songButton.innerText = 'Song 4 u';
     // Set button class for styling
-    songButton.className = 'redirect-button';
+    songButton.className = 'song-button';
     // Set button click event
     songButton.onclick = function() {
         window.open('https://www.youtube.com/watch?v=8iQkvnvt8oY', '_blank'); // Replace 'https://example.com' with the desired website URL
