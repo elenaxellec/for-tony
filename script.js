@@ -59,7 +59,7 @@ function stopRaining() {
     clearInterval(starInterval);
 }
 
-// Function to display the cat-heart.gif
+// Function to display the cat-heart.gif with smooth transition and delay
 function displayCatHeart() {
     // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
@@ -69,14 +69,18 @@ function displayCatHeart() {
     catHeartImage.src = 'heart-ending.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
     // Set alternative text for the image (for accessibility)
     catHeartImage.alt = 'Cat Heart';
-     // Initially set opacity to 0 for smooth fade-in transition
+    // Initially set opacity to 0 for smooth fade-in transition
     catHeartImage.style.opacity = 0;
     // When the cat-heart image is fully loaded, add it to the image container
     catHeartImage.onload = function() {
-        // Apply smooth transition to opacity property
-        catHeartImage.style.transition = 'opacity 0.5s ease-in-out';
-        // Set opacity to 1 to fade in smoothly
-        catHeartImage.style.opacity = 1;
+        // Delay the fade-in effect for 1 second (1000 milliseconds)
+        setTimeout(function() {
+            // Apply smooth transition to opacity property
+            catHeartImage.style.transition = 'opacity 1s ease-in-out';
+            // Set opacity to 1 to fade in smoothly
+            catHeartImage.style.opacity = 1;
+        }, 1000); // 1000 milliseconds delay
+        // Add the cat-heart image to the container
         imageContainer.innerHTML = ''; // Clear existing content
         imageContainer.appendChild(catHeartImage);
     };
