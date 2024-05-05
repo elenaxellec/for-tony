@@ -23,22 +23,53 @@ function selectOption(option) {
     }
 }
 
-// Function to flash rainbow colors and then execute a callback function
-function flashRainbowColors(callback) {
-    var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
-    var i = 0;
+function createHeart() {
+    var heart = document.createElement('div');
+    heart.innerHTML = '❤️'; // Heart emoji
+    heart.style.position = 'absolute';
+    heart.style.fontSize = '20px';
+    heart.style.color = '#ff0000'; // Heart color
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.top = '-40px'; // Start from above the screen
+    document.body.appendChild(heart);
+    
+    return heart;
+}
+
+function animateHeart(heart) {
+    var animation = heart.animate([
+        { top: '-40px' }, // Start position
+        { top: window.innerHeight + 'px' } // End position
+    ], {
+        duration: Math.random() * 3000 + 2000, // Random duration between 2 and 5 seconds
+        easing: 'ease-in', // Easing function
+        fill: 'forwards' // Maintain end state
+    });
+
+    animation.onfinish = function() {
+        heart.remove(); // Remove the heart after animation ends
+    };
+}
+
+function rainHearts(callback) {
     var interval = setInterval(function() {
-        document.body.style.backgroundColor = colors[i];
-        i = (i + 1) % colors.length;
-    }, 200); // Change color every 200 milliseconds
+        var heart = createHeart();
+        animateHeart(heart);
+    }, 200); // Generate a heart every 200 milliseconds
+
     setTimeout(function() {
         clearInterval(interval);
-        document.body.style.backgroundColor = ''; // Reset background color
         if (callback) {
             callback();
         }
-    }, 2000); // Flash colors for 2 seconds
+    }, 2000); // Stop raining hearts after 2 seconds
 }
+
+// Start raining hearts
+rainHearts(function() {
+    console.log('Hearts stopped raining.');
+});
+
 
 // Function to display the cat.gif initially
 function displayCat() {
