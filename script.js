@@ -104,12 +104,12 @@ function showRedirectButton() {
    // Create the redirect button
     var redirectButton = document.createElement('buttons');
     // Set button text
-    redirectButton.innerText = 'Go to Website';
+    redirectButton.innerText = 'Sleepy cat 4 u';
     // Set button class for styling
     redirectButton.className = 'redirect-button';
     // Set button click event
     redirectButton.onclick = function() {
-        window.location.href = 'https://www.youtube.com/watch?v=G8HPhrVMZoA&list=LL&index=30'; // Replace 'https://example.com' with the desired website URL
+        window.open = ('https://www.youtube.com/watch?v=G8HPhrVMZoA&list=LL&index=30', '_blank'); // Replace 'https://example.com' with the desired website URL
     };
     // Position the refresh button in the corner
     redirectButton.style.position = 'fixed';
