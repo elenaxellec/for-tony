@@ -24,7 +24,7 @@ function showRefreshButton() {
 
 function showRefresh2Button() {
     // Create a refresh button element
-    var refresh2Button = document.createElement('buttons');
+    var refresh2Button = document.createElement('button');
     refresh2Button.innerText = 'Back 2 main';
     refresh2Button.id = 'refresh2-button';
     refresh2Button.onclick = function() {
