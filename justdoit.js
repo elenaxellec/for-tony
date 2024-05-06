@@ -78,7 +78,8 @@ function displayRandomVideo(containerId, videoURLs) {
 displayRandomVideo('video-container', [
     "https://www.youtube.com/embed/5-sfG8BV8wU?si=cUIT0xqw6YIqxH3z",
     "https://www.youtube.com/embed/VOjpFa_irgM?si=i8Cb-JA_jvMj0-Ep",
-    "https://www.youtube.com/embed/CC52B7maEg0?si=byQPg1sZZt10pqMz"
+    "https://www.youtube.com/embed/CC52B7maEg0?si=byQPg1sZZt10pqMz",
+    "https://www.youtube.com/embed/RPX44xvUmFA?si=o6j47b6CpgiT-h50"
 ]);
 
 // Start raining fire emojis continuously
