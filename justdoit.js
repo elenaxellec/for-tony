@@ -22,6 +22,29 @@ function showRefreshButton() {
     document.body.appendChild(refreshButton);
 }
 
+function showRefresh2Button() {
+    // Create a refresh button element
+    var refresh2Button = document.createElement('button');
+    refresh2Button.innerText = 'Back 2 main';
+    refresh2Button.id = 'refresh2-button';
+    refresh2Button.onclick = function() {
+        window.open('https://elenaxellec.github.io/for-tony/justdoit.html', '_self'); // Replace 'https://example.com' with the desired website URL
+    };
+    // Position the refresh button in the corner
+    refresh2Button.style.position = 'fixed';
+    refresh2Button.style.bottom = '20px';
+    refresh2Button.style.right = '20px';
+    refresh2Button.style.padding = '5px 10px'; // Adjust padding to make it smaller
+    refresh2Button.style.fontSize = '14px'; // Adjust font size to make it smaller
+    refresh2Button.style.border = '2px solid #333';
+    refresh2Button.style.backgroundColor = '#fff';
+    refresh2Button.style.color = '#333';
+    refresh2Button.style.borderRadius = '5px';
+    refresh2Button.style.cursor = 'pointer';
+    // Append the refresh button to the body
+    document.body.appendChild(refresh2Button);
+}
+
 // Function to create and animate fire emojis
 function createFire() {
     var fire = document.createElement('div');
