@@ -2,10 +2,10 @@
 function showRefreshButton() {
     // Create a refresh button element
     var refreshButton = document.createElement('button');
-    refreshButton.innerText = 'Refresh';
+    refreshButton.innerText = 'Back 2 main';
     refreshButton.id = 'refresh-button';
     refreshButton.onclick = function() {
-        window.location.reload(); // Reload the page when clicked
+        window.open('https://elenaxellec.github.io/for-tony/', '_self'); // Replace 'https://example.com' with the desired website URL
     };
     // Position the refresh button in the corner
     refreshButton.style.position = 'fixed';
@@ -24,3 +24,5 @@ function showRefreshButton() {
 
 // Call the showRefreshButton() function to display the refresh button
 showRefreshButton();
+
+
