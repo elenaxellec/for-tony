@@ -164,6 +164,10 @@ function showSongButton() {
     document.body.appendChild(songButton);
 }
 
+function redirectToNewPage() {
+    window.location.href = 'justdoit.html'; // Replace 'new_page.html' with the URL of your new webpage
+}
+
 // Function to create and animate hearts
 function createHeart() {
     var heart = document.createElement('div');
