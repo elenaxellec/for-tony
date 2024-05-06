@@ -10,7 +10,7 @@ function showRefreshButton() {
     // Position the refresh button in the corner
     refreshButton.style.position = 'fixed';
     refreshButton.style.bottom = '20px';
-    refreshButton.style.left = '20px';
+    refreshButton.style.right = '20px';
     refreshButton.style.padding = '5px 10px'; // Adjust padding to make it smaller
     refreshButton.style.fontSize = '14px'; // Adjust font size to make it smaller
     refreshButton.style.border = '2px solid #333';
@@ -24,7 +24,7 @@ function showRefreshButton() {
 
 function showRefresh2Button() {
     // Create a refresh button element
-    var refresh2Button = document.createElement('button');
+    var refresh2Button = document.createElement('buttons');
     refresh2Button.innerText = 'Back 2 main';
     refresh2Button.id = 'refresh2-button';
     refresh2Button.onclick = function() {
@@ -33,7 +33,7 @@ function showRefresh2Button() {
     // Position the refresh button in the corner
     refresh2Button.style.position = 'fixed';
     refresh2Button.style.bottom = '20px';
-    refresh2Button.style.right = '20px';
+    refresh2Button.style.left = '20px';
     refresh2Button.style.padding = '5px 10px'; // Adjust padding to make it smaller
     refresh2Button.style.fontSize = '14px'; // Adjust font size to make it smaller
     refresh2Button.style.border = '2px solid #333';
