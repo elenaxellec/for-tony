@@ -113,5 +113,6 @@ setInterval(function() {
 
 // Call the showRefreshButton() function to display the refresh button
 showRefreshButton();
+shoRefresh2Button();
 
 
