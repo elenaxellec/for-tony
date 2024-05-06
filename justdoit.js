@@ -25,7 +25,7 @@ function showRefreshButton() {
 function showRefresh2Button() {
     // Create a refresh button element
     var refresh2Button = document.createElement('button');
-    refresh2Button.innerText = 'Back 2 main';
+    refresh2Button.innerText = 'Refresh';
     refresh2Button.id = 'refresh2-button';
     refresh2Button.onclick = function() {
         window.open('https://elenaxellec.github.io/for-tony/justdoit.html', '_self'); // Replace 'https://example.com' with the desired website URL
@@ -113,6 +113,6 @@ setInterval(function() {
 
 // Call the showRefreshButton() function to display the refresh button
 showRefreshButton();
-shoRefresh2Button();
+showRefresh2Button();
 
 
