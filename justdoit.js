@@ -10,7 +10,7 @@ function showRefreshButton() {
     // Position the refresh button in the corner
     refreshButton.style.position = 'fixed';
     refreshButton.style.bottom = '20px';
-    refreshButton.style.right = '20px';
+    refreshButton.style.left = '20px';
     refreshButton.style.padding = '5px 10px'; // Adjust padding to make it smaller
     refreshButton.style.fontSize = '14px'; // Adjust font size to make it smaller
     refreshButton.style.border = '2px solid #333';
