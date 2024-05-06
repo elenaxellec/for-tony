@@ -51,41 +51,42 @@ function animateFire(fire) {
     };
 }
 
-// Define the function to shuffle an array randomly
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+// Function to randomly select a video URL
+function getRandomVideoURL(videoURLs) {
+    return videoURLs[Math.floor(Math.random() * videoURLs.length)];
 }
 
-// Function to dynamically create iframes for YouTube videos
-function displayRandomVideos(containerId, videoURLs) {
-    // Shuffle the array of video URLs randomly
-    shuffleArray(videoURLs);
+// Function to display a single random video
+function displayRandomVideo(containerId, videoURLs) {
+    var randomVideoURL = getRandomVideoURL(videoURLs);
 
-    // Get the video container element
     var videoContainer = document.getElementById(containerId);
+    videoContainer.innerHTML = ''; // Clear existing video if any
 
-    // Loop through the shuffled video URLs and create iframes for each video
-    videoURLs.forEach(function(videoURL) {
-        var iframe = document.createElement('iframe');
-        iframe.width = '560';
-        iframe.height = '315';
-        iframe.src = videoURL;
-        iframe.frameborder = '0';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowfullscreen = true;
-        videoContainer.appendChild(iframe);
-    });
+    var iframe = document.createElement('iframe');
+    iframe.width = '560';
+    iframe.height = '315';
+    iframe.src = randomVideoURL;
+    iframe.frameborder = '0';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowfullscreen = true;
+
+    videoContainer.appendChild(iframe);
 }
+
+// Call the function to display a single random video
+displayRandomVideo('video-container', [
+    "https://www.youtube.com/embed/5-sfG8BV8wU?si=cUIT0xqw6YIqxH3z",
+    "https://www.youtube.com/embed/VOjpFa_irgM?si=i8Cb-JA_jvMj0-Ep",
+    "https://www.youtube.com/embed/CC52B7maEg0?si=byQPg1sZZt10pqMz"
+]);
 
 // Start raining fire emojis continuously
 setInterval(function() {
     var fire = createFire();
     animateFire(fire);
 }, 200); // Generate a fire emoji every 200 milliseconds
+
 // Call the showRefreshButton() function to display the refresh button
 showRefreshButton();
 
