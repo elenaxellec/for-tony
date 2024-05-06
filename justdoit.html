@@ -16,6 +16,15 @@
 
     <!-- Call the showRefreshButton() function from the external JavaScript file -->
     <script>
+        // Define an array of YouTube video URLs
+        var videoURLs = [
+            "https://www.youtube.com/embed/5-sfG8BV8wU?si=cUIT0xqw6YIqxH3z",
+            "https://www.youtube.com/embed/hS5CfP8n_js?si=mwSkN0qDUkT-aU7F",
+            // Add more YouTube video URLs as needed
+        ];
+
+        // Call the function to display random videos
+        displayRandomVideos('video-container', videoURLs);
         // Call the showRefreshButton() function from external_script.js
         showRefreshButton();
     </script>
