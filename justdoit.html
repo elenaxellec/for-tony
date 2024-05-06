@@ -7,26 +7,25 @@
     <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
 </head>
 <body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <!-- Embed YouTube video -->
-    <div style="position: relative;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/5-sfG8BV8wU?si=cUIT0xqw6YIqxH3z" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- Container for dynamically added YouTube videos -->
+    <div id="video-container" style="position: relative;"></div>
 
     <!-- Include external JavaScript file -->
     <script src="justdoit.js"></script>
 
-    <!-- Call the showRefreshButton() function from the external JavaScript file -->
+    <!-- Call the function to display random videos -->
     <script>
         // Define an array of YouTube video URLs
         var videoURLs = [
             "https://www.youtube.com/embed/5-sfG8BV8wU?si=cUIT0xqw6YIqxH3z",
-            "https://www.youtube.com/embed/hS5CfP8n_js?si=mwSkN0qDUkT-aU7F",
+            "https://www.youtube.com/embed/ANnOyvTEr3Q?si=cUIT0xqw6YIqxH3z",
             // Add more YouTube video URLs as needed
         ];
 
         // Call the function to display random videos
         displayRandomVideos('video-container', videoURLs);
-        // Call the showRefreshButton() function from external_script.js
         showRefreshButton();
     </script>
 </body>
 </html>
+
