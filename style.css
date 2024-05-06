@@ -28,9 +28,9 @@ body {
     font-family: 'Times New Roman', Times, serif; /* Apply Times New Roman font to the button */
     font-style: italic; /* Make the font italic */
     background-color: #fff; /* Set button background color */
-    color: white; /* Set text color to white */
-    border: '2px solid #333'; /* Remove button border */
-    border-radius: '5px';
+    color: #333; /* Set text color */
+    border: 2px solid #333; /* Set button border */
+    border-radius: 5px; /* Set border radius */
     cursor: pointer; /* Set cursor to pointer on hover */
 }
 
