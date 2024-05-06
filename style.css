@@ -22,16 +22,28 @@ body {
 }
 
 #redirect-button {
-    padding: 10px 20px; /* Set padding for button */
+    padding: 5px 10px; /* Set padding for button */
     margin-top: 10px; /* Add space above the button */
-    font-size: 20px; /* Set font size for button */
+    font-size: 14px; /* Set font size for button */
     font-family: 'Times New Roman', Times, serif; /* Apply Times New Roman font to the button */
     font-style: italic; /* Make the font italic */
-    background-color: #FB607F; /* Set button background color */
+    background-color: #fff; /* Set button background color */
     color: white; /* Set text color to white */
-    border: none; /* Remove button border */
+    border: '2px solid #333'; /* Remove button border */
+    border-radius: '5px';
     cursor: pointer; /* Set cursor to pointer on hover */
 }
+
+/* redirectButton.style.position = 'fixed';
+    redirectButton.style.top = '20px';
+    redirectButton.style.left = '20px';
+    redirectButton.style.padding = '5px 10px'; // Adjust padding to make it smaller
+    redirectButton.style.fontSize = '14px'; // Adjust font size to make it smaller
+    redirectButton.style.border = '2px solid #333';
+    redirectButton.style.backgroundColor = '#fff';
+    redirectButton.style.color = '#333';
+    redirectButton.style.borderRadius = '5px';
+    redirectButton.style.cursor = 'pointer'; */
 
 #question {
     font-family: 'Times New Roman', Times, serif; /* Apply Times New Roman font to the question */
