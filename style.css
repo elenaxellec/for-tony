@@ -21,6 +21,18 @@ body {
     /* This container will hold the images */
 }
 
+#redirect-button {
+    padding: 10px 20px; /* Set padding for button */
+    margin-top: 10px; /* Add space above the button */
+    font-size: 20px; /* Set font size for button */
+    font-family: 'Times New Roman', Times, serif; /* Apply Times New Roman font to the button */
+    font-style: italic; /* Make the font italic */
+    background-color: #FB607F; /* Set button background color */
+    color: white; /* Set text color to white */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
 #question {
     font-family: 'Times New Roman', Times, serif; /* Apply Times New Roman font to the question */
     font-style: italic; /* Make the font italic */
