@@ -32,11 +32,14 @@
             word-wrap: break-word; /* Ensures long words break to fit within the container */
             overflow: hidden;
             display: inline-block;
+            position: relative;
         }
         .cursor {
             display: inline-block;
             width: 1px;
+            height: 1em;
             background-color: #333;
+            position: absolute;
             animation: blink-caret 1s step-end infinite;
         }
         @keyframes blink-caret {
@@ -83,7 +86,7 @@
 </head>
 <body>
     <div class="container">
-        <div id="typing-text" class="typing"></div>
+        <div id="typing-text" class="typing"><span class="cursor"></span></div>
     </div>
     <script>
         const text = `Dear [Name],
@@ -97,11 +100,13 @@ Yours truly,
 
         function typeWriter() {
             if (i <= text.length) {
+                // Update text and ensure cursor is after the text
                 document.getElementById("typing-text").innerHTML = text.substring(0, i) + '<span class="cursor"></span>';
                 i++;
                 setTimeout(typeWriter, speed);
             } else {
-                document.getElementById("typing-text").innerHTML = text + '<span class="cursor"></span>';
+                // Remove the cursor once typing is complete
+                document.getElementById("typing-text").innerHTML = text;
             }
         }
 
