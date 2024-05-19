@@ -44,4 +44,17 @@
         <div id="typing-text" class="typing"></div>
     </div>
     <script>
-        const text = "Dear [Name],\n\nThis is a love letter that appears as if it is be
+        const text = "Dear [Name],\n\nThis is a love letter that appears as if it is being typed out in real time. I want you to know that every word you see is crafted with the utmost care and affection. As you read this, imagine my fingers dancing across the keyboard, each stroke filled with love and admiration for you.\n\nYours truly,\n[Your Name]";
+        let i = 0;
+        const speed = 100; // typing speed in milliseconds
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typing-text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
