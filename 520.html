@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Love Letter with Glitter Cursor</title>
+    <title>Typing Love Letter with Heart Glitter Cursor</title>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
@@ -45,21 +45,38 @@
         }
         .glitter {
             position: absolute;
-            width: 5px;
-            height: 5px;
-            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,215,0,1) 100%);
-            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            transform: rotate(45deg);
             pointer-events: none;
             animation: glitter-animation 1s ease-out forwards;
+        }
+        .glitter:before,
+        .glitter:after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .glitter:before {
+            top: -5px;
+            left: 0;
+        }
+        .glitter:after {
+            top: 0;
+            left: -5px;
         }
         @keyframes glitter-animation {
             0% {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+                transform: translateY(0) rotate(45deg) scale(1);
             }
             100% {
                 opacity: 0;
-                transform: translateY(100px) scale(0);
+                transform: translateY(100px) rotate(45deg) scale(0);
             }
         }
     </style>
@@ -80,13 +97,11 @@ Yours truly,
 
         function typeWriter() {
             if (i <= text.length) {
-                // Set the innerHTML including the cursor
                 document.getElementById("typing-text").innerHTML = text.substring(0, i) + '<span class="cursor"></span>';
                 i++;
                 setTimeout(typeWriter, speed);
             } else {
-                // Remove the cursor once typing is complete
-                document.getElementById("typing-text").innerHTML = text;
+                document.getElementById("typing-text").innerHTML = text + '<span class="cursor"></span>';
             }
         }
 
