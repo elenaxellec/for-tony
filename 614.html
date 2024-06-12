@@ -9,7 +9,7 @@
 
         body {
             font-family: 'Dancing Script', cursive;
-            background-color: #f0e6f6;
+            background-color: #fffbc8;
             color: #333;
             display: flex;
             justify-content: center;
@@ -63,9 +63,6 @@
             transition: opacity 1s ease-in-out;
         }
         .visible {
-            opacity: 1;
-        }
-        .visible-border {
             opacity: 1;
         }
         .cursor {
@@ -174,16 +171,18 @@ Elena`;
 
         function updateBorders(count) {
             const emojis = '🌹'.repeat(count + 1);
-            document.querySelector('.border-top').innerText = emojis;
-            document.querySelector('.border-bottom').innerText = emojis;
+            fadeInBorder('.border-top', emojis);
+            fadeInBorder('.border-bottom', emojis);
 
             const verticalEmojis = Array(count + 1).fill('🌹').join('<br>');
-            document.querySelector('.border-left').innerHTML = verticalEmojis;
-            document.querySelector('.border-right').innerHTML = verticalEmojis;
+            fadeInBorder('.border-left', verticalEmojis);
+            fadeInBorder('.border-right', verticalEmojis);
+        }
 
-            document.querySelectorAll('.border').forEach(border => {
-                border.classList.add('visible-border');
-            });
+        function fadeInBorder(selector, content) {
+            const borderElement = document.querySelector(selector);
+            borderElement.innerHTML = content;
+            borderElement.style.opacity = 1;
         }
 
         window.onload = typeWriter;
