@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>614</title>
+    <title>Typing Love Letter with Heart Glitter Cursor</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
@@ -29,34 +29,33 @@
             position: relative;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .border-top, .border-bottom {
+        .border {
             position: absolute;
-            left: 0;
-            right: 0;
             display: flex;
             justify-content: center;
             font-size: 24px;
         }
         .border-top {
             top: -24px;
+            left: 0;
+            right: 0;
         }
         .border-bottom {
             bottom: -24px;
-        }
-        .border-left, .border-right {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            font-size: 24px;
+            left: 0;
+            right: 0;
         }
         .border-left {
+            top: 0;
+            bottom: 0;
             left: -24px;
+            flex-direction: column;
         }
         .border-right {
+            top: 0;
+            bottom: 0;
             right: -24px;
+            flex-direction: column;
         }
         .paragraph {
             opacity: 0;
@@ -117,10 +116,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="border-top">🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻</div>
-        <div class="border-left">🌻<br>🌻<br>🌻<br>🌻<br>🌻<br>🌻<br>🌻<br>🌻<br>🌻<br>🌻</div>
-        <div class="border-right">🌻<br>🌻<br>🌻<br>🌻<br>🌻<br>🌻<br>🌻<br>🌻<br>🌻<br>🌻</div>
-        <div class="border-bottom">🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻</div>
+        <div class="border border-top"></div>
+        <div class="border border-left"></div>
+        <div class="border border-right"></div>
+        <div class="border border-bottom"></div>
         <div id="typing-text"></div>
     </div>
     <script>
@@ -162,9 +161,21 @@ Elena`;
                 p.getBoundingClientRect();
                 p.classList.add('visible');
 
+                updateBorders(i);
+
                 i++;
                 setTimeout(typeWriter, 2000); // delay between paragraphs
             }
+        }
+
+        function updateBorders(count) {
+            const emojis = '🌻'.repeat(count + 1);
+            document.querySelector('.border-top').innerText = emojis;
+            document.querySelector('.border-bottom').innerText = emojis;
+
+            const verticalEmojis = Array(count + 1).fill('🌻').join('<br>');
+            document.querySelector('.border-left').innerHTML = verticalEmojis;
+            document.querySelector('.border-right').innerHTML = verticalEmojis;
         }
 
         window.onload = typeWriter;
