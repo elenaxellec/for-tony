@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Love Letter with Heart Glitter Cursor</title>
+    <title>Happy 614</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
@@ -28,12 +28,12 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
-        .typing {
-            white-space: pre-wrap; /* Ensures that the text wraps correctly */
-            word-wrap: break-word; /* Ensures long words break to fit within the container */
-            overflow: hidden;
-            display: inline-block;
-            position: relative;
+        .paragraph {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .visible {
+            opacity: 1;
         }
         .cursor {
             display: inline-block;
@@ -87,36 +87,49 @@
 </head>
 <body>
     <div class="container">
-        <div id="typing-text" class="typing"><span class="cursor"></span></div>
+        <div id="typing-text"></div>
     </div>
     <script>
         const text = `Dear Tony,
 
 Happy 520 <3 
 Made this little webpage at work in hopes that it makes you smile even if it's just for a moment.
+
 Remember to eat lots for lunch 
 & remember to stay hydrated
+
 Get meds for your nose if it's still runny
+
 Help me give Whiskey extra pets on the butt
+
 what else... let me know if you think the omakase i sent you last night is okay~
+
 I wanted to ask if you wanna get 酸菜魚 for dinner tonight but I realized the queue... :")
+
 We could also go watch that movie I was talking about beside H&M, that's if you want!
+
 Just some options.. I'll be off work at 5 :)
+
 Love you!
 
 Elena`;
+        
+        const paragraphs = text.split('\n\n');
         let i = 0;
-        const speed = 100; // typing speed in milliseconds
 
         function typeWriter() {
-            if (i <= text.length) {
-                // Update text and ensure cursor is after the text
-                document.getElementById("typing-text").innerHTML = text.substring(0, i) + '<span class="cursor"></span>';
+            if (i < paragraphs.length) {
+                const p = document.createElement('p');
+                p.className = 'paragraph';
+                p.innerText = paragraphs[i];
+                document.getElementById("typing-text").appendChild(p);
+
+                // Trigger reflow to restart the animation
+                p.getBoundingClientRect();
+                p.classList.add('visible');
+
                 i++;
-                setTimeout(typeWriter, speed);
-            } else {
-                // Remove the cursor once typing is complete
-                document.getElementById("typing-text").innerHTML = text;
+                setTimeout(typeWriter, 2000); // delay between paragraphs
             }
         }
 
@@ -140,4 +153,3 @@ Elena`;
     </script>
 </body>
 </html>
-
