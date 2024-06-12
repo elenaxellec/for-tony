@@ -9,7 +9,7 @@
 
         body {
             font-family: 'Great Vibes', cursive;
-            background-color: #ffefd5;
+            background-color: #fffbc8;
             color: #333;
             display: flex;
             justify-content: center;
@@ -27,31 +27,6 @@
             border-radius: 10px;
             text-align: center;
             position: relative;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .title {
-            font-size: 3em;
-            color: #ff69b4;
-        }
-        .subtitle {
-            font-size: 1.5em;
-            color: #ff4500;
-        }
-        .time {
-            font-size: 1.2em;
-            color: #ff6347;
-        }
-        .rsvp {
-            font-size: 1.2em;
-            color: #ff4500;
-        }
-        .love {
-            font-size: 1.5em;
-            color: #ff69b4;
-        }
-        .emoji {
-            font-size: 1.5em;
         }
         .border {
             position: absolute;
@@ -177,15 +152,7 @@ Love you 💖`;
                 const p = document.createElement('p');
                 p.className = 'paragraph';
                 if (i === 0) {
-                    p.classList.add('first-paragraph', 'title');
-                } else if (i === 1) {
-                    p.classList.add('subtitle');
-                } else if (i === paragraphs.length - 2) {
-                    p.classList.add('rsvp');
-                } else if (i === paragraphs.length - 1) {
-                    p.classList.add('love');
-                } else {
-                    p.classList.add('time');
+                    p.classList.add('first-paragraph');
                 }
                 p.innerText = paragraphs[i];
                 document.getElementById("typing-text").appendChild(p);
