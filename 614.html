@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>614</title>
+    <title>Typing Love Letter with Heart Glitter Cursor</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
@@ -33,6 +33,8 @@
             display: flex;
             justify-content: center;
             font-size: 24px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
         .border-top {
             top: -24px;
@@ -61,6 +63,9 @@
             transition: opacity 1s ease-in-out;
         }
         .visible {
+            opacity: 1;
+        }
+        .visible-border {
             opacity: 1;
         }
         .cursor {
@@ -168,13 +173,17 @@ Elena`;
         }
 
         function updateBorders(count) {
-            const emojis = '🌻'.repeat(count + 1);
+            const emojis = '🌹'.repeat(count + 1);
             document.querySelector('.border-top').innerText = emojis;
             document.querySelector('.border-bottom').innerText = emojis;
 
-            const verticalEmojis = Array(count + 1).fill('🌻').join('<br>');
+            const verticalEmojis = Array(count + 1).fill('🌹').join('<br>');
             document.querySelector('.border-left').innerHTML = verticalEmojis;
             document.querySelector('.border-right').innerHTML = verticalEmojis;
+
+            document.querySelectorAll('.border').forEach(border => {
+                border.classList.add('visible-border');
+            });
         }
 
         window.onload = typeWriter;
