@@ -62,6 +62,9 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
+        .first-paragraph {
+            font-size: 2em; /* Adjust this value as needed */
+        }
         .visible {
             opacity: 1;
         }
@@ -159,6 +162,9 @@ Elena`;
             if (i < paragraphs.length) {
                 const p = document.createElement('p');
                 p.className = 'paragraph';
+                if (i === 0) {
+                    p.classList.add('first-paragraph');
+                }
                 p.innerText = paragraphs[i];
                 document.getElementById("typing-text").appendChild(p);
 
