@@ -33,6 +33,8 @@
             display: flex;
             justify-content: center;
             font-size: 24px;
+        }
+        .border span {
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
@@ -185,8 +187,13 @@ Elena`;
 
         function fadeInBorder(selector, content) {
             const borderElement = document.querySelector(selector);
-            borderElement.innerHTML = content;
-            borderElement.style.opacity = 1;
+            borderElement.innerHTML = content.split('').map(c => `<span>${c}</span>`).join('');
+            const spans = borderElement.querySelectorAll('span');
+            spans.forEach((span, index) => {
+                setTimeout(() => {
+                    span.style.opacity = 1;
+                }, index * 100);
+            });
         }
 
         window.onload = typeWriter;
